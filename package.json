@@ -17,9 +17,11 @@
   },
   "homepage": "https://github.com/lluuk/devhub#readme",
   "dependencies": {
+    "cheerio": "^1.0.0-rc.3",
     "cron": "^1.8.2",
     "express": "^4.17.1",
     "node-fetch": "^2.6.0",
+    "puppeteer": "^3.3.0",
     "redis": "^3.0.2"
   }
 }
