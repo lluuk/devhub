@@ -19,7 +19,21 @@ class Task {
         while(resultCount > 0) {
             const res = await fetch(`${this.baseUrl}?page=${onPage}`)
             const jobs = await res.json()
-            this.jobs = [...this.jobs, ...jobs]
+            const adjustedJobs = []
+            jobs.forEach(({ id, company_logo, title, company_url, company, location, created_at })=> {
+                const job = {
+                    id,
+                    image: company_logo,
+                    title,
+                    link: company_url,
+                    company,
+                    location,
+                    tags: [],
+                    date: created_at,
+                }
+                adjustedJobs.push(job)
+            })
+            this.jobs = [...this.jobs, ...adjustedJobs]
             resultCount = jobs.length
             onPage++
         }

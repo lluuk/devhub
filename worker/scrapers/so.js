@@ -29,6 +29,7 @@ async function scrape () {
         const jobsResults = $('.listResults > div[data-result-id]')
         jobsResults.each((idx, elem) => {
             const job = {
+                id: `${baseUrl}${$('h2.mb4.fc-black-800.fs-body3 > a', elem).attr('href')}`,
                 image: $('.grid img.grid--cell.fl-shrink0.w48.h48.bar-sm.mr12', elem).attr('src'),
                 title: $('h2.mb4.fc-black-800.fs-body3', elem).text().trim(),
                 link: `${baseUrl}${$('h2.mb4.fc-black-800.fs-body3 > a', elem).attr('href')}`,
