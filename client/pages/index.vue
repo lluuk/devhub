@@ -9,7 +9,7 @@
 </template>
 
 <script>
-import JobItem from '~/components/job-item'
+import JobItem from '~/components/JobItem'
 export default {
   components: {
     JobItem
