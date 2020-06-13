@@ -20,12 +20,12 @@ class Task {
             const res = await fetch(`${this.baseUrl}?page=${onPage}`)
             const jobs = await res.json()
             const adjustedJobs = []
-            jobs.forEach(({ id, company_logo, title, company_url, company, location, created_at })=> {
+            jobs.forEach(({ id, company_logo, title, url, company, location, created_at })=> {
                 const job = {
                     id,
                     image: company_logo,
                     title,
-                    link: company_url,
+                    link: url,
                     company,
                     location,
                     tags: [],
