@@ -96,6 +96,4 @@ async function scrape() {
 	await browser.close()
 }
 
-scrape()
-
 module.exports = scrape
